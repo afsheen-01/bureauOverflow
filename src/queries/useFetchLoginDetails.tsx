@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions, UseQueryResult } from "react-query";
 import Axios, { AxiosError } from "axios";
-import { LoginDetails, LoginResponse } from "./types/login";
+import { LoginDetails, LoginResponse } from "../types/login";
 
 const config = {
   baseURL: "/",
@@ -20,6 +20,7 @@ const getLoginDetails =
       details,
       config
     );
+    console.log(response);
     return new Promise<LoginResponse>((resolve) =>
       resolve(response as LoginResponse)
     );
